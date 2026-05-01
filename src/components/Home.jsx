@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import cvPdf from '../assets/cv.pdf';
 import './Home.css';
 
 const Home = () => {
@@ -59,9 +60,9 @@ const Home = () => {
           <a href="#contact" className="btn-secondary">Get In Touch</a>
           <div className="btn-cv-group">
             <span>📄 CV —</span>
-            <a href="/Sisay_Temesgen_CV.pdf" target="_blank" rel="noopener noreferrer">View</a>
+            <a href={cvPdf} target="_blank" rel="noopener noreferrer">View</a>
             <span>|</span>
-            <a href="/Sisay_Temesgen_CV.pdf" download="Sisay_Temesgen_CV.pdf">Download</a>
+            <a href={cvPdf} download="Sisay_Temesgen_CV.pdf">Download</a>
           </div>
         </motion.div>
 

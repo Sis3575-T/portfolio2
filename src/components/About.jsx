@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import profilePhoto from '../assets/images/profile-photo.jpg';
+import cvPdf from '../assets/cv.pdf';
 import './About.css';
 
 const About = () => {
@@ -83,9 +84,9 @@ const About = () => {
               <a href="https://github.com/Sis3575-T" target="_blank" rel="noopener noreferrer" className="btn-outline">GitHub Profile</a>
               <div className="btn-cv-group">
                 <span>📄 CV —</span>
-                <a href="/Sisay_Temesgen_CV.pdf" target="_blank" rel="noopener noreferrer">View</a>
+                <a href={cvPdf} target="_blank" rel="noopener noreferrer">View</a>
                 <span>|</span>
-                <a href="/Sisay_Temesgen_CV.pdf" download="Sisay_Temesgen_CV.pdf">Download</a>
+                <a href={cvPdf} download="Sisay_Temesgen_CV.pdf">Download</a>
               </div>
             </div>
           </motion.div>
