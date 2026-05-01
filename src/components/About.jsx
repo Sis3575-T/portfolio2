@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import profilePhoto from '../assets/images/profile-photo.jpg';
-import cvPdf from '../assets/cv.pdf';
 import './About.css';
+
+const cvUrl = 'https://portfolio2-sigma-pink.vercel.app/cv.pdf';
+const googleViewUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(cvUrl)}`;
 
 const About = () => {
   const highlights = [
@@ -84,9 +86,9 @@ const About = () => {
               <a href="https://github.com/Sis3575-T" target="_blank" rel="noopener noreferrer" className="btn-outline">GitHub Profile</a>
               <div className="btn-cv-group">
                 <span>📄 CV —</span>
-                <a href={cvPdf} target="_blank" rel="noopener noreferrer">View</a>
+                <a href={googleViewUrl} target="_blank" rel="noopener noreferrer">View</a>
                 <span>|</span>
-                <a href={cvPdf} download="Sisay_Temesgen_CV.pdf">Download</a>
+                <a href={cvUrl} download="Sisay_Temesgen_CV.pdf">Download</a>
               </div>
             </div>
           </motion.div>

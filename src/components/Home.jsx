@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
-import cvPdf from '../assets/cv.pdf';
 import './Home.css';
+
+const cvUrl = 'https://portfolio2-sigma-pink.vercel.app/cv.pdf';
+const googleViewUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(cvUrl)}`;
 
 const Home = () => {
   return (
@@ -60,9 +62,9 @@ const Home = () => {
           <a href="#contact" className="btn-secondary">Get In Touch</a>
           <div className="btn-cv-group">
             <span>📄 CV —</span>
-            <a href={cvPdf} target="_blank" rel="noopener noreferrer">View</a>
+            <a href={googleViewUrl} target="_blank" rel="noopener noreferrer">View</a>
             <span>|</span>
-            <a href={cvPdf} download="Sisay_Temesgen_CV.pdf">Download</a>
+            <a href={cvUrl} download="Sisay_Temesgen_CV.pdf">Download</a>
           </div>
         </motion.div>
 
