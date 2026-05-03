@@ -1,6 +1,17 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
+
+// ── EmailJS config ──────────────────────────────────────
+// 1. Go to https://www.emailjs.com and create a free account
+// 2. Add an Email Service (Gmail) → copy Service ID below
+// 3. Create an Email Template → copy Template ID below
+// 4. Go to Account → API Keys → copy Public Key below
+const EMAILJS_SERVICE_ID  = 'service_zytqe1w';
+const EMAILJS_TEMPLATE_ID = 'template_kj2fx4o';
+const EMAILJS_PUBLIC_KEY  = 'ovBEFSKgggx5XF6Qk';
+// ────────────────────────────────────────────────────────
 
 const inView = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -19,14 +30,36 @@ const CONTACTS = [
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    setForm({ name: '', email: '', subject: '', message: '' });
-    setTimeout(() => setSent(false), 5000);
+    setLoading(true);
+    setError('');
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          subject: form.subject,
+          message: form.message,
+          to_email: 'sisay3575@gmail.com',
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      setSent(true);
+      setForm({ name: '', email: '', subject: '', message: '' });
+      setTimeout(() => setSent(false), 6000);
+    } catch (err) {
+      setError('Failed to send. Please email me directly at sisay3575@gmail.com');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -133,9 +166,10 @@ const Contact = () => {
                     value={form.message} onChange={handleChange} required
                   />
                 </div>
-                <button type="submit" className="btn btn-primary form-submit">
-                  Send Message →
+                <button type="submit" className="btn btn-primary form-submit" disabled={loading}>
+                  {loading ? 'Sending...' : 'Send Message →'}
                 </button>
+                {error && <p className="form-error">{error}</p>}
               </form>
             )}
           </motion.div>

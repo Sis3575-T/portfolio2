@@ -28,7 +28,7 @@ const About = () => {
 
           <motion.div {...inView(0.05)}>
             <p className="section-tag">Who I Am</p>
-            <h2 className="section-title">Passionate developer,<br />lifelong learner.</h2>
+            <h2 className="section-title">Passionate developer.</h2>
           </motion.div>
 
           <motion.p className="about-bio" {...inView(0.1)}>
