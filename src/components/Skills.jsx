@@ -5,28 +5,24 @@ const categories = [
   {
     icon: '🎨',
     title: 'Frontend',
-    color: '#6366f1',
     bg: '#eef2ff',
     skills: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'React', 'Responsive Design', 'Framer Motion'],
   },
   {
     icon: '⚙️',
     title: 'Backend',
-    color: '#0891b2',
     bg: '#ecfeff',
     skills: ['Node.js', 'Express.js', 'MongoDB', 'REST APIs'],
   },
   {
     icon: '🛠️',
     title: 'Tools & DevOps',
-    color: '#7c3aed',
     bg: '#f5f3ff',
     skills: ['Git & GitHub', 'VS Code', 'Vite', 'Vercel', 'Render'],
   },
   {
     icon: '🤖',
     title: 'Learning',
-    color: '#059669',
     bg: '#ecfdf5',
     skills: ['Machine Learning', 'Python Basics', 'Data Structures', 'Algorithms'],
   },
@@ -39,7 +35,7 @@ const container = {
 
 const card = {
   hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
 };
 
 const Skills = () => (
@@ -67,15 +63,13 @@ const Skills = () => (
       >
         {categories.map((cat, i) => (
           <motion.div className="skill-card" key={i} variants={card}>
-            <div className="skill-card-header" style={{ '--cat-color': cat.color, '--cat-bg': cat.bg }}>
+            <div className="skill-card-header" style={{ '--cat-bg': cat.bg }}>
               <span className="skill-card-icon">{cat.icon}</span>
               <h3 className="skill-card-title">{cat.title}</h3>
             </div>
             <div className="skill-tags">
               {cat.skills.map((s, j) => (
-                <span key={j} className="skill-tag" style={{ '--cat-color': cat.color, '--cat-bg': cat.bg }}>
-                  {s}
-                </span>
+                <span key={j} className="skill-tag">{s}</span>
               ))}
             </div>
           </motion.div>

@@ -17,62 +17,62 @@ const About = () => {
     { icon: '🏫', label: 'University', value: 'Bahir Dar University' },
     { icon: '📍', label: 'Location', value: 'Bahir Dar, Ethiopia' },
     { icon: '💼', label: 'Focus', value: 'Full Stack Development' },
-    { icon: '🤖', label: 'Interest', value: 'AI & Machine Learning' },
     { icon: '🌐', label: 'Languages', value: 'Amharic · English' },
+    { icon: '⚡', label: 'Interests', value: 'Web · AI · Open Source' },
   ];
 
   return (
     <section className="about" id="about">
       <div className="container">
+        <motion.div {...inView()}>
+          <p className="section-tag">About Me</p>
+          <h2 className="section-title">Turning ideas into web experiences.</h2>
+        </motion.div>
+
         <div className="about-layout">
+          <div className="about-content-col">
+            <motion.p className="about-bio" {...inView(0.1)}>
+              I'm a Computer Science student at Bahir Dar University with a passion for
+              building modern, accessible web applications. My journey started with curiosity
+              about how the web works — and has grown into a commitment to crafting software
+              that makes a real difference.
+            </motion.p>
 
-          <motion.div {...inView(0.05)}>
-            <p className="section-tag">Who I Am</p>
-            <h2 className="section-title">Passionate developer.</h2>
-          </motion.div>
+            <motion.p className="about-bio" {...inView(0.15)}>
+              I believe great software is not just functional — it's intuitive, fast, and
+              accessible to everyone, everywhere. I'm constantly learning and exploring new
+              technologies to expand my skillset.
+            </motion.p>
 
-          <motion.p className="about-bio" {...inView(0.1)}>
-            I'm a Computer Science student at Bahir Dar University with a deep passion for
-            building modern, accessible web applications. My journey started with curiosity
-            about how the web works — and has grown into a commitment to crafting software
-            that makes a real difference.
-          </motion.p>
-
-          <motion.p className="about-bio" {...inView(0.15)}>
-            I'm actively exploring AI and machine learning to expand my technical expertise.
-            I believe great software is not just functional — it's intuitive, fast, and
-            accessible to everyone, everywhere.
-          </motion.p>
-
-          <motion.div className="about-facts" {...inView(0.2)}>
-            {facts.map((f, i) => (
-              <div className="about-fact" key={i}>
-                <span className="fact-icon">{f.icon}</span>
-                <div>
-                  <p className="fact-label">{f.label}</p>
-                  <p className="fact-value">{f.value}</p>
+            <motion.div className="about-facts" {...inView(0.2)}>
+              {facts.map((f, i) => (
+                <div className="about-fact" key={i}>
+                  <span className="fact-icon">{f.icon}</span>
+                  <div>
+                    <p className="fact-label">{f.label}</p>
+                    <p className="fact-value">{f.value}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
 
-          <motion.div className="about-actions" {...inView(0.25)}>
-            <a href="mailto:sisay3575@gmail.com" className="btn btn-primary">Hire Me</a>
-            <a
-              href="https://github.com/Sis3575-T"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-outline"
-            >
-              GitHub Profile
-            </a>
-            <div className="cv-inline">
-              <span>📄</span>
-              <a href={googleViewUrl} target="_blank" rel="noopener noreferrer">View CV</a>
-              <span className="cv-sep">·</span>
-              <a href={cvUrl} download="Sisay_Temesgen_CV.pdf">Download</a>
-            </div>
-          </motion.div>
+            <motion.div className="about-actions" {...inView(0.25)}>
+              <a
+                href="https://github.com/Sis3575-T"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline"
+              >
+                GitHub Profile
+              </a>
+              <div className="cv-inline">
+                <span>📄</span>
+                <a href={googleViewUrl} target="_blank" rel="noopener noreferrer">View CV</a>
+                <span className="cv-sep">·</span>
+                <a href={cvUrl} download="Sisay_Temesgen_CV.pdf">Download</a>
+              </div>
+            </motion.div>
+          </div>
 
         </div>
       </div>

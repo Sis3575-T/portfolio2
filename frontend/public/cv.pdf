@@ -1,0 +1,133 @@
+%PDF-1.4
+%����
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R /Lang (en-US) >>
+endobj
+
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792]
+   /Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R >>
+                 /ProcSet [/PDF /Text] >>
+   /Contents 7 0 R >>
+endobj
+
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+
+7 0 obj
+<< /Length 8 0 R >>
+stream
+BT
+/F1 28 Tf
+50 740 Td
+(Sisay Temesgen) Tj
+/F2 14 Tf
+50 712 Td
+(Full Stack Developer & AI Enthusiast) Tj
+/F1 16 Tf
+50 680 Td
+(Contact) Tj
+/F2 12 Tf
+50 662 Td
+(Email: sisay.temesgen@example.com) Tj
+50 646 Td
+(Phone: +251-XXX-XXXXXX) Tj
+50 630 Td
+(Location: Bahir Dar, Ethiopia) Tj
+
+/F1 16 Tf
+50 598 Td
+(Education) Tj
+/F2 12 Tf
+50 580 Td
+(Bachelor of Science in Computer Science) Tj
+50 564 Td
+(Bahir Dar University | 2023 - Present) Tj
+
+/F1 16 Tf
+50 532 Td
+(Skills) Tj
+/F2 12 Tf
+50 514 Td
+(Languages: JavaScript, TypeScript, Python, C++) Tj
+50 498 Td
+(Frontend: React, Tailwind CSS, HTML5, CSS3) Tj
+50 482 Td
+(Backend: Node.js, Express.js, REST APIs) Tj
+50 466 Td
+(Database: MongoDB, PostgreSQL) Tj
+50 450 Td
+(Tools: Git, Docker, VS Code, Vite) Tj
+
+/F1 16 Tf
+50 418 Td
+(Projects) Tj
+/F2 12 Tf
+50 400 Td
+(CMS Platform - Full-stack content management system with admin dashboard,) Tj
+50 384 Td
+(authentication, and media management using MERN stack.) Tj
+50 362 Td
+(E-commerce API - RESTful API with authentication, product management,) Tj
+50 346 Td
+(payment integration, and order tracking.) Tj
+
+/F1 16 Tf
+50 314 Td
+(Experience) Tj
+/F2 12 Tf
+50 296 Td
+(Building Full-Stack Applications | 2024 - Present) Tj
+50 278 Td
+(- Developing complete web applications using MERN stack) Tj
+50 262 Td
+(- Building client projects with modern technologies) Tj
+50 246 Td
+(- Integrating APIs, databases, and cloud services) Tj
+50 224 Td
+(Learning Through Building | 2023) Tj
+50 206 Td
+(- Mastered React, Node.js, Express for full-stack development) Tj
+
+/F3 10 Tf
+50 170 Td
+(References available upon request.) Tj
+
+ET
+endstream
+endobj
+
+8 0 obj
+672
+endobj
+
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000268 00000 n 
+0000000340 00000 n 
+0000000409 00000 n 
+0000000486 00000 n 
+0000001210 00000 n 
+
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+1250
+%%EOF

@@ -1,0 +1,15 @@
+const router = require('express').Router();
+const {
+  getHero, getHeroById, createHero, updateHero, deleteHero, toggleHero,
+} = require('../controllers/heroController');
+const { protect, adminOnly } = require('../middleware/auth');
+
+router.get('/public', getHero);
+router.get('/', protect, getHeroById);
+router.get('/:id', protect, getHeroById);
+router.post('/', protect, adminOnly, createHero);
+router.put('/:id', protect, adminOnly, updateHero);
+router.delete('/:id', protect, adminOnly, deleteHero);
+router.patch('/:id/toggle', protect, adminOnly, toggleHero);
+
+module.exports = router;

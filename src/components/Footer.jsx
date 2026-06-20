@@ -11,7 +11,7 @@ const Footer = () => {
             <span className="footer-mark">ST</span>
             <div>
               <p className="footer-name">Sisay Temesgen</p>
-              <p className="footer-role">Full Stack Developer &amp; AI Enthusiast</p>
+              <p className="footer-role">Full Stack Developer</p>
             </div>
           </div>
 

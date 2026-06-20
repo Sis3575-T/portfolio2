@@ -33,14 +33,6 @@ const Header = () => {
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
       <div className="header-inner">
-        <a href="#home" className="brand" onClick={close}>
-          <span className="brand-mark">ST</span>
-          <div className="brand-text">
-            <span className="brand-name">Sisay Temesgen</span>
-            <span className="brand-role">Full Stack Developer</span>
-          </div>
-        </a>
-
         <nav className={`nav${menuOpen ? ' nav--open' : ''}`} aria-label="Main navigation">
           {NAV.map(item => (
             <a
@@ -52,14 +44,15 @@ const Header = () => {
               {item}
             </a>
           ))}
-          <a
-            href="mailto:sisay3575@gmail.com"
-            className="nav-hire"
-            onClick={close}
-          >
-            Hire Me
-          </a>
         </nav>
+
+        <a href="#home" className="brand" onClick={close}>
+          <span className="brand-mark">ST</span>
+          <div className="brand-text">
+            <span className="brand-name">Sisay Temesgen</span>
+            <span className="brand-role">Full Stack Developer</span>
+          </div>
+        </a>
 
         <button
           className={`hamburger${menuOpen ? ' hamburger--open' : ''}`}

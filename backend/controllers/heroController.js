@@ -1,0 +1,62 @@
+const Hero = require('../models/Hero');
+
+exports.getHero = async (req, res) => {
+  try {
+    const hero = await Hero.findOne({ isActive: true }).sort({ createdAt: -1 });
+    if (!hero) return res.json({ success: true, data: null });
+    res.json({ success: true, data: hero });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+exports.getHeroById = async (req, res) => {
+  try {
+    const hero = await Hero.findById(req.params.id);
+    if (!hero) return res.status(404).json({ success: false, message: 'Hero not found' });
+    res.json({ success: true, data: hero });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+exports.createHero = async (req, res) => {
+  try {
+    const hero = await Hero.create(req.body);
+    res.status(201).json({ success: true, data: hero });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+exports.updateHero = async (req, res) => {
+  try {
+    const hero = await Hero.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+    if (!hero) return res.status(404).json({ success: false, message: 'Hero not found' });
+    res.json({ success: true, data: hero });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+exports.deleteHero = async (req, res) => {
+  try {
+    const hero = await Hero.findByIdAndDelete(req.params.id);
+    if (!hero) return res.status(404).json({ success: false, message: 'Hero not found' });
+    res.json({ success: true, message: 'Hero deleted' });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+exports.toggleHero = async (req, res) => {
+  try {
+    const hero = await Hero.findById(req.params.id);
+    if (!hero) return res.status(404).json({ success: false, message: 'Hero not found' });
+    hero.isActive = !hero.isActive;
+    await hero.save();
+    res.json({ success: true, data: hero });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};

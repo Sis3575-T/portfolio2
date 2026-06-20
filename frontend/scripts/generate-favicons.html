@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head><title>Favicon Generator</title></head>
+<body style="font-family:Inter,sans-serif;background:#020617;color:#f8fafc;display:flex;flex-direction:column;align-items:center;padding:40px">
+  <h1 style="color:#7c3aed">Favicon Generator</h1>
+  <p style="color:#94a3b8;margin-bottom:24px">Click to generate all favicon files</p>
+  <canvas id="c" width="180" height="180" style="border-radius:12px;margin-bottom:24px;display:none"></canvas>
+  <button id="go" style="padding:12px 32px;background:#7c3aed;color:#fff;border:none;border-radius:8px;font-size:16px;cursor:pointer">Generate & Download All</button>
+  <div id="status" style="margin-top:16px;color:#22d3ee"></div>
+
+  <script>
+    function drawS(ctx, size) {
+      const s = size;
+      ctx.clearRect(0, 0, s, s);
+      
+      // Rounded rect background
+      const r = s * 0.2;
+      const grad = ctx.createLinearGradient(0, 0, s, s);
+      grad.addColorStop(0, '#7c3aed');
+      grad.addColorStop(1, '#22d3ee');
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.moveTo(r, 0);
+      ctx.lineTo(s - r, 0);
+      ctx.quadraticCurveTo(s, 0, s, r);
+      ctx.lineTo(s, s - r);
+      ctx.quadraticCurveTo(s, s, s - r, s);
+      ctx.lineTo(r, s);
+      ctx.quadraticCurveTo(0, s, 0, s - r);
+      ctx.lineTo(0, r);
+      ctx.quadraticCurveTo(0, 0, r, 0);
+      ctx.closePath();
+      ctx.fill();
+      
+      // Draw "S" letter
+      ctx.fillStyle = '#ffffff';
+      ctx.font = `bold ${s * 0.6}px Inter, Arial, sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.shadowColor = 'rgba(0,0,0,0.2)';
+      ctx.shadowBlur = s * 0.03;
+      ctx.fillText('S', s/2, s/2 + s * 0.03);
+    }
+
+    document.getElementById('go').onclick = async () => {
+      const status = document.getElementById('status');
+      const sizes = [16, 32, 180];
+
+      for (const size of sizes) {
+        const c = document.getElementById('c');
+        c.width = size;
+        c.height = size;
+        const ctx = c.getContext('2d');
+        drawS(ctx, size);
+        
+        const blob = await new Promise(res => c.toBlob(res, 'image/png'));
+        const names = {
+          16: 'favicon-16x16.png',
+          32: 'favicon-32x32.png',
+          180: 'apple-touch-icon.png'
+        };
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = names[size];
+        a.click();
+        URL.revokeObjectURL(a.href);
+        status.textContent = `Generated ${names[size]} (${size}x${size})`;
+        await new Promise(r => setTimeout(r, 500));
+      }
+
+      // For favicon.ico, just use 32x32 PNG renamed
+      status.textContent = 'All done! Save the files to frontend/public/';
+    };
+  </script>
+</body>
+</html>

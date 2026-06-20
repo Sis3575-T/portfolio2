@@ -2,65 +2,62 @@
 
 .container { max-width: 1140px; margin: 0 auto; padding: 0 2rem; }
 
-/* ── Section labels ── */
 .section-tag {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #6366f1;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.75rem;
 }
 .section-tag::before {
   content: '';
-  width: 22px; height: 2px;
+  width: 20px; height: 2px;
   background: #6366f1;
-  border-radius: 2px;
   display: block;
 }
 
 .section-title {
-  font-size: clamp(2rem, 3.5vw, 2.75rem);
-  font-weight: 900;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 800;
   color: #0f172a;
-  letter-spacing: -0.035em;
-  margin-bottom: 0.85rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+  line-height: 1.15;
 }
 
 .section-subtitle {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #64748b;
-  max-width: 500px;
-  line-height: 1.8;
-  margin-bottom: 3.5rem;
+  max-width: 560px;
+  line-height: 1.75;
+  margin-bottom: 3rem;
 }
 
-/* ── Buttons ── */
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.8rem 1.85rem;
-  border-radius: 12px;
+  padding: 0.75rem 1.75rem;
+  border-radius: 10px;
   font-weight: 600;
-  font-size: 0.92rem;
-  transition: all 0.22s ease;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: #6366f1;
   color: #fff;
-  box-shadow: 0 4px 18px rgba(99,102,241,0.38);
 }
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(99,102,241,0.45);
+  background: #4f46e5;
+  transform: translateY(-1px);
   color: #fff;
   text-decoration: none;
 }
@@ -73,19 +70,18 @@
 .btn-outline:hover {
   background: #6366f1;
   color: #fff;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   text-decoration: none;
 }
 
 .btn-ghost {
-  background: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.1);
   color: #fff;
-  border: 1.5px solid rgba(255,255,255,0.3);
-  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255,255,255,0.25);
 }
 .btn-ghost:hover {
-  background: rgba(255,255,255,0.22);
-  transform: translateY(-2px);
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-1px);
   color: #fff;
   text-decoration: none;
 }
